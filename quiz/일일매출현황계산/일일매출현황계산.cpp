@@ -13,16 +13,16 @@ using namespace std;
 
 int main()
 {
-    int menu_num;
-    cin >> menu_num;
-    cin.ignore();
+	int menu_num;
+	cin >> menu_num;
+	cin.ignore();
 
-    Cafe kenGwon_cafe(menu_num);
+	Cafe kenGwon_cafe(menu_num);
 
-    kenGwon_cafe.get_cafe_menu();
-    kenGwon_cafe.print_cafe_menu();
+	kenGwon_cafe.get_cafe_menu();
+	kenGwon_cafe.print_cafe_menu();
 
-    kenGwon_cafe.get_order();
-    kenGwon_cafe.print_sales();
+	kenGwon_cafe.get_order();
+	kenGwon_cafe.print_sales();
 }
 
