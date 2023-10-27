@@ -1,26 +1,26 @@
 ﻿
-// MFC1.cpp: 애플리케이션에 대한 클래스 동작을 정의합니다.
+// DlgTest.cpp: 애플리케이션에 대한 클래스 동작을 정의합니다.
 //
 
 #include "pch.h"
 #include "framework.h"
 #include "afxwinappex.h"
 #include "afxdialogex.h"
-#include "MFC1.h"
+#include "DlgTest.h"
 #include "MainFrm.h"
 
-#include "MFC1Doc.h"
-#include "MFC1View.h"
+#include "DlgTestDoc.h"
+#include "DlgTestView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-// CMFC1App
+// CDlgTestApp
 
-BEGIN_MESSAGE_MAP(CMFC1App, CWinApp)
-	ON_COMMAND(ID_APP_ABOUT, &CMFC1App::OnAppAbout)
+BEGIN_MESSAGE_MAP(CDlgTestApp, CWinApp)
+	ON_COMMAND(ID_APP_ABOUT, &CDlgTestApp::OnAppAbout)
 	// 표준 파일을 기초로 하는 문서 명령입니다.
 	ON_COMMAND(ID_FILE_NEW, &CWinApp::OnFileNew)
 	ON_COMMAND(ID_FILE_OPEN, &CWinApp::OnFileOpen)
@@ -29,9 +29,9 @@ BEGIN_MESSAGE_MAP(CMFC1App, CWinApp)
 END_MESSAGE_MAP()
 
 
-// CMFC1App 생성
+// CDlgTestApp 생성
 
-CMFC1App::CMFC1App() noexcept
+CDlgTestApp::CDlgTestApp() noexcept
 {
 
 	// 다시 시작 관리자 지원
@@ -45,20 +45,20 @@ CMFC1App::CMFC1App() noexcept
 
 	// TODO: 아래 애플리케이션 ID 문자열을 고유 ID 문자열로 바꾸십시오(권장).
 	// 문자열에 대한 서식: CompanyName.ProductName.SubProduct.VersionInformation
-	SetAppID(_T("MFC1.AppID.NoVersion"));
+	SetAppID(_T("DlgTest.AppID.NoVersion"));
 
 	// TODO: 여기에 생성 코드를 추가합니다.
 	// InitInstance에 모든 중요한 초기화 작업을 배치합니다.
 }
 
-// 유일한 CMFC1App 개체입니다.
+// 유일한 CDlgTestApp 개체입니다.
 
-CMFC1App theApp;
+CDlgTestApp theApp;
 
 
-// CMFC1App 초기화
+// CDlgTestApp 초기화
 
-BOOL CMFC1App::InitInstance()
+BOOL CDlgTestApp::InitInstance()
 {
 	// 애플리케이션 매니페스트가 ComCtl32.dll 버전 6 이상을 사용하여 비주얼 스타일을
 	// 사용하도록 지정하는 경우, Windows XP 상에서 반드시 InitCommonControlsEx()가 필요합니다. 
@@ -103,9 +103,9 @@ BOOL CMFC1App::InitInstance()
 	CSingleDocTemplate* pDocTemplate;
 	pDocTemplate = new CSingleDocTemplate(
 		IDR_MAINFRAME,
-		RUNTIME_CLASS(CMFC1Doc),
+		RUNTIME_CLASS(CDlgTestDoc),
 		RUNTIME_CLASS(CMainFrame),       // 주 SDI 프레임 창입니다.
-		RUNTIME_CLASS(CMFC1View));
+		RUNTIME_CLASS(CDlgTestView));
 	if (!pDocTemplate)
 		return FALSE;
 	AddDocTemplate(pDocTemplate);
@@ -128,7 +128,7 @@ BOOL CMFC1App::InitInstance()
 	return TRUE;
 }
 
-int CMFC1App::ExitInstance()
+int CDlgTestApp::ExitInstance()
 {
 	//TODO: 추가한 추가 리소스를 처리합니다.
 	AfxOleTerm(FALSE);
@@ -136,7 +136,7 @@ int CMFC1App::ExitInstance()
 	return CWinApp::ExitInstance();
 }
 
-// CMFC1App 메시지 처리기
+// CDlgTestApp 메시지 처리기
 
 
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
@@ -157,8 +157,6 @@ protected:
 // 구현입니다.
 protected:
 	DECLARE_MESSAGE_MAP()
-public:
-	afx_msg void OnBnClickedButton1();
 };
 
 CAboutDlg::CAboutDlg() noexcept : CDialogEx(IDD_ABOUTBOX)
@@ -171,24 +169,16 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
-	ON_BN_CLICKED(IDC_BUTTON1, &CAboutDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 // 대화 상자를 실행하기 위한 응용 프로그램 명령입니다.
-void CMFC1App::OnAppAbout()
+void CDlgTestApp::OnAppAbout()
 {
 	CAboutDlg aboutDlg;
 	aboutDlg.DoModal();
 }
 
-// CMFC1App 메시지 처리기
+// CDlgTestApp 메시지 처리기
 
 
 
-
-
-void CAboutDlg::OnBnClickedButton1()
-{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	printf("button click!!");
-}

@@ -1,19 +1,19 @@
 ﻿
-// MFC1View.h: CMFC1View 클래스의 인터페이스
+// MExDlgView.h: CMExDlgView 클래스의 인터페이스
 //
 
 #pragma once
 
 
-class CMFC1View : public CView
+class CMExDlgView : public CView
 {
 protected: // serialization에서만 만들어집니다.
-	CMFC1View() noexcept;
-	DECLARE_DYNCREATE(CMFC1View)
+	CMExDlgView() noexcept;
+	DECLARE_DYNCREATE(CMExDlgView)
 
 // 특성입니다.
 public:
-	CMFC1Doc* GetDocument() const;
+	CMExDlgDoc* GetDocument() const;
 
 // 작업입니다.
 public:
@@ -29,7 +29,7 @@ protected:
 
 // 구현입니다.
 public:
-	virtual ~CMFC1View();
+	virtual ~CMExDlgView();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
@@ -41,11 +41,11 @@ protected:
 protected:
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnButton1();
+	afx_msg void OnDialogshow();
 };
 
-#ifndef _DEBUG  // MFC1View.cpp의 디버그 버전
-inline CMFC1Doc* CMFC1View::GetDocument() const
-   { return reinterpret_cast<CMFC1Doc*>(m_pDocument); }
+#ifndef _DEBUG  // MExDlgView.cpp의 디버그 버전
+inline CMExDlgDoc* CMExDlgView::GetDocument() const
+   { return reinterpret_cast<CMExDlgDoc*>(m_pDocument); }
 #endif
 

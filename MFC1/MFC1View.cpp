@@ -12,6 +12,7 @@
 
 #include "MFC1Doc.h"
 #include "MFC1View.h"
+#include <iostream>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -27,6 +28,7 @@ BEGIN_MESSAGE_MAP(CMFC1View, CView)
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
+	ON_COMMAND(IDC_BUTTON1, &CMFC1View::OnButton1)
 END_MESSAGE_MAP()
 
 // CMFC1View 생성/소멸
@@ -80,12 +82,6 @@ void CMFC1View::OnDraw(CDC* pDC)
 		DEFAULT_PITCH, _T("궁서체")); // 이 서체는 윈도우시스템 디렉토리에 폰트 디렉토리에 있는 폰트만 가져올 수 있다.
 	//oldFont backup
 	oldFont = pDC->SelectObject(&cFont);
-
-
-
-
-
-
 
 	CString test = _T("hello MFC SDI GDI interface test!!"); // 자료형 타입을 C스트링으로 줬다는게 중요
 	pDC->TextOut(0, 0, test);
@@ -163,3 +159,9 @@ CMFC1Doc* CMFC1View::GetDocument() const // 디버그되지 않은 버전은 인
 
 
 // CMFC1View 메시지 처리기
+
+
+void CMFC1View::OnButton1()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+}
