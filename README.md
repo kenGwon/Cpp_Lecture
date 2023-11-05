@@ -1,5 +1,7 @@
 C_practice
 ==========
+교육과정에서 산출된 문서(주로 수업내용 필기)는 [velog](https://velog.io/@kgh9959/series/%EC%88%98%EC%97%85-%ED%95%84%EA%B8%B0) 또는 [본 레포지토리 wiki](https://github.com/kenGwon/Cpp_Lecture/wiki)에서 확인할 수 있습니다.
+
 ### 참고도서 
     - 명품 C++ Programming (생능출판2023)
     - MFC 강의자료 PPT
@@ -14,3 +16,4 @@ C_practice
 
 ### 첨부파일
     - c++과제.xlsx : 교수님이 내주신 퀴즈 문제
+    
